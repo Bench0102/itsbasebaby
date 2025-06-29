@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mickey's Mobile Auto Detailing | Mobile Car Detailing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1A1A1A;
+            color: #f3f4f6;
+        }
+        
+        .italic-font {
+            font-style: italic;
+        }
+        
+        .hot-pink {
+            color: #FF00FF;
+        }
+        
+        .electric-blue {
+            color: #00BFFF;
+        }
+        
+        .hot-pink-bg {
+            background-color: #FF00FF;
+        }
+        
+        .electric-blue-bg {
+            background-color: #00BFFF;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 100%);
+        }
+        
+        /* Custom glow effect for buttons and highlights */
+        .glow {
+            box-shadow: 0 0 10px rgba(0,191,255,0.7), 0 0 20px rgba(255,0,255,0.5);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 5px rgba(0,191,255,0.7), 0 0 10px rgba(255,0,255,0.5);
+        }
+        
+        /* Bouncing Link Animation */
+        .bouncing-link {
+            position: relative;
+            display: inline-block;
+            color: #9CA3AF;
+            font-family: 'Barlow Semi Condensed', Arial, sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        .bouncing-link::before {
+            color: #FF00FF;
+            content: attr(data-hover);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .bouncing-link:hover,
+        .bouncing-link:active {
+            color: transparent;
+        }
+        
+        .bouncing-link:hover::before,
+        .bouncing-link:active::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        /* Mobile bouncing links */
+        .bouncing-link-mobile {
+            position: relative;
+            display: inline-block;
+            color: #9CA3AF;
+            font-family: 'Barlow Semi Condensed', Arial, sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        .bouncing-link-mobile::before {
+            color: #FF00FF;
+            content: attr(data-hover);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .bouncing-link-mobile:hover,
+        .bouncing-link-mobile:active {
+            color: transparent;
+        }
+        
+        .bouncing-link-mobile:hover::before,
+        .bouncing-link-mobile:active::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        /* Gallery hover effect */
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+        
+        /* Gallery Service Card Style Hover Effect */
+        .infinite-gallery-item {
+            transition: transform 0.3s cubic-bezier(.22,1,.36,1), box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .infinite-gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3), 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(236, 72, 153, 0.2);
+            border-color: #EC4899;
+        }
+        
+        /* Service Card Glow Hover Effects */
+        .service-card {
+            transition: transform 0.3s cubic-bezier(.22,1,.36,1), box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3), 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(236, 72, 153, 0.2);
+            border-color: #EC4899;
+        }
+        
+        /* About Section Card Hover Effects */
+        .about-card {
+            transition: transform 0.3s cubic-bezier(.22,1,.36,1), box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+        .about-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3), 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(236, 72, 153, 0.2);
+            border-color: #EC4899;
+        }
+        
+        /* Testimonial card styling */
+        .testimonial-card {
+            background: linear-gradient(145deg, #222222, #1a1a1a);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s cubic-bezier(.22,1,.36,1), box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3), 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(236, 72, 153, 0.2);
+            border-color: #EC4899;
+        }
+        
+        /* Input focus effect */
+        .custom-input:focus {
+            border-color: #FF00FF;
+            box-shadow: 0 0 0 2px rgba(255,0,255,0.2);
+            outline: none;
+        }
+        
+        /* Hamburger menu animation */
+        .hamburger {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .hamburger.active .top-line {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.active .middle-line {
+            opacity: 0;
+        }
+        
+        .hamburger.active .bottom-line {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        /* Mobile menu animation */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        .mobile-menu {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        
+        .mobile-menu.closing {
+            animation: slideOut 0.3s ease-out forwards;
+        }
+        
+        /* Mobile navbar improvements */
+        @media (max-width: 768px) {
+            #top-contact-bar {
+                padding: 4px 0;
+                font-size: 0.75rem;
+                background: linear-gradient(90deg, #ec4899, #3b82f6) !important;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 60;
+            }
+            
+            #top-contact-bar .container {
+                flex-direction: column;
+                gap: 2px;
+            }
+            
+            #top-contact-bar .flex {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px;
+            }
+            
+            #navbar {
+                padding: 12px 0;
+                background: #000000 !important; /* Solid black background */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                position: fixed;
+                top: 40px;
+                left: 0;
+                right: 0;
+                z-index: 50;
+            }
+            
+            .logo-text {
+                flex-direction: row;
+                align-items: center;
+                gap: 4px;
+                flex-wrap: wrap;
+            }
+            
+            .logo-text .text-lg {
+                font-size: 0.9rem;
+                line-height: 1.1;
+            }
+            
+            .logo-text .text-sm {
+                font-size: 0.75rem;
+                line-height: 1.1;
+            }
+            
+            .logo-text img {
+                height: 2rem;
+                width: 2rem;
+            }
+            
+            #mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #000000 !important; /* Solid black background like the second image */
+                z-index: 45;
+                padding-top: 60px; /* Reduced from 100px to 60px */
+            }
+            
+            .mobile-menu-content {
+                padding: 5px 20px; /* Further reduced top padding from 15px to 5px */
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
+                background: #000000; /* Ensure content area is also black */
+            }
+            
+            /* Improved hamburger menu */
+            #mobile-menu-button {
+                padding: 8px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 6px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 55;
+            }
+            
+            #mobile-menu-button:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: scale(1.05);
+            }
+            
+            .hamburger {
+                width: 22px;
+                height: 22px;
+                position: relative;
+            }
+            
+            .hamburger .top-line,
+            .hamburger .middle-line,
+            .hamburger .bottom-line {
+                height: 2px;
+                width: 22px;
+                background: #fff;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+                position: absolute;
+                left: 0;
+            }
+            
+            .hamburger .top-line {
+                top: 6px;
+            }
+            
+            .hamburger .middle-line {
+                top: 11px;
+            }
+            
+            .hamburger .bottom-line {
+                top: 16px;
+            }
+            
+            .hamburger.active .top-line {
+                top: 11px;
+                transform: rotate(45deg);
+                background: #fff;
+            }
+            
+            .hamburger.active .middle-line {
+                opacity: 0;
+                transform: scale(0);
+            }
+            
+            .hamburger.active .bottom-line {
+                top: 11px;
+                transform: rotate(-45deg);
+                background: #fff;
+            }
+            
+            .mobile-menu a {
+                padding: 12px 0; /* Reduced from 16px to 12px */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                display: block;
+                text-align: left;
+                color: #ffffff;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-left: 20px;
+            }
+            
+            .mobile-menu a:last-child {
+                border-bottom: none;
+                margin-top: 15px; /* Reduced from 20px to 15px */
+                background: linear-gradient(90deg, #ec4899, #3b82f6);
+                border-radius: 25px;
+                padding: 12px 24px;
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            /* Add icons to mobile menu items */
+            .mobile-menu a[href="#home"]:before {
+                content: "🏠 ";
+                margin-right: 10px;
+            }
+            
+            .mobile-menu a[href="#services"]:before {
+                content: "⚙️ ";
+                margin-right: 10px;
+            }
+            
+            .mobile-menu a[href="#gallery"]:before {
+                content: "📷 ";
+                margin-right: 10px;
+            }
+            
+            .mobile-menu a[href="#about"]:before {
+                content: "ℹ️ ";
+                margin-right: 10px;
+            }
+            
+            .mobile-menu a[href="#testimonials"]:before {
+                content: "⭐ ";
+                margin-right: 10px;
+            }
+            
+            .mobile-menu a[href="#contact"]:not(:last-child):before {
+                content: "📧 ";
+                margin-right: 10px;
+            }
+        }
+        
+        /* Desktop navbar improvements */
+        @media (min-width: 769px) {
+            #navbar {
+                background: rgba(0, 0, 0, 0.95) !important;
+                backdrop-filter: blur(15px);
+                border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .logo-text {
+                align-items: center;
+                gap: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text .text-xl {
+                font-size: 1rem;
+            }
+            
+            .logo-text .text-base {
+                font-size: 0.8rem;
+            }
+            
+            #mobile-menu {
+                padding-top: 60px;
+            }
+        }
+        
+        /* Infinite Scroll Gallery Styles */
+        .infinite-gallery {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            height: 320px;
+            padding: 20px 0;
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+        
+        .gallery-track {
+            display: inline-flex;
+            animation: scroll 30s linear infinite;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .infinite-gallery-item {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 250px;
+            position: relative;
+            transition: transform 0.3s cubic-bezier(.22,1,.36,1), box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 10px 5px;
+        }
+        
+        .infinite-gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3), 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(236, 72, 153, 0.2);
+            border-color: #EC4899;
+        }
+        
+        .infinite-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .infinite-gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Fireflies/Stars Animation */
+        .fireflies {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .firefly {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate, float 8s infinite linear;
+        }
+        
+        .firefly.pink {
+            background-color: #FF00FF;
+            box-shadow: 0 0 6px #FF00FF, 0 0 12px #FF00FF, 0 0 18px #FF00FF;
+        }
+        
+        .firefly.blue {
+            background-color: #00BFFF;
+            box-shadow: 0 0 6px #00BFFF, 0 0 12px #00BFFF, 0 0 18px #00BFFF;
+        }
+        
+        @keyframes twinkle {
+            0% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+            }
+        }
+        
+        /* Different animation delays and durations for variety */
+        .firefly:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 8s, 2s; }
+        .firefly:nth-child(2) { left: 20%; animation-delay: 1s; animation-duration: 10s, 2.5s; }
+        .firefly:nth-child(3) { left: 30%; animation-delay: 2s; animation-duration: 12s, 1.8s; }
+        .firefly:nth-child(4) { left: 40%; animation-delay: 0.5s; animation-duration: 9s, 2.2s; }
+        .firefly:nth-child(5) { left: 50%; animation-delay: 1.5s; animation-duration: 11s, 1.9s; }
+        .firefly:nth-child(6) { left: 60%; animation-delay: 2.5s; animation-duration: 8.5s, 2.1s; }
+        .firefly:nth-child(7) { left: 70%; animation-delay: 0.8s; animation-duration: 10.5s, 2.3s; }
+        .firefly:nth-child(8) { left: 80%; animation-delay: 1.8s; animation-duration: 9.5s, 1.7s; }
+        .firefly:nth-child(9) { left: 90%; animation-delay: 2.2s; animation-duration: 11.5s, 2.4s; }
+        .firefly:nth-child(10) { left: 15%; animation-delay: 3s; animation-duration: 8.8s, 2s; }
+        
+        /* Ensure content stays above fireflies */
+        .service-card,
+        .gallery-item,
+        .infinite-gallery-item,
+        .testimonial-card,
+        .about-card {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ensure section content containers are above fireflies */
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <!-- Top Contact Bar -->
+    <div id="top-contact-bar" class="fixed w-full bg-gradient-to-r from-pink-500 to-blue-500 text-white py-2 text-sm z-50 transition-transform duration-300">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-1 md:space-y-0">
+            <div class="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-6">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-phone-alt text-white"></i>
+                    <a href="tel:1135556116" class="hover:text-gray-200 transition duration-300 text-xs sm:text-sm">(113) 555-6116</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope text-white"></i>
+                    <a href="mailto:Mickeysautodetail4u@gmail.com" class="hover:text-gray-200 transition duration-300 text-xs sm:text-sm">Mickeysautodetail4u@gmail.com</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-clock text-white"></i>
+                <span class="text-white text-xs sm:text-sm">Mon–Fri: 7AM–7PM | Sat–Sun: 11AM–5PM</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed w-full bg-black/95 backdrop-blur-md z-40 shadow-lg transition-all duration-300" style="top: 28px;">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="Images/logo.png" alt="Mickey's Mobile Auto Detailing Logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+                <div class="logo-text flex items-center space-x-2">
+                    <span class="text-lg sm:text-xl md:text-2xl italic-font font-bold hot-pink glow-text">Mickey's Mobile</span>
+                    <span class="text-sm sm:text-base md:text-lg italic-font electric-blue glow-text">Auto Detailing</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="bouncing-link transition duration-300 text-white hover:text-pink-400" data-hover="Home">Home</a>
+                <a href="#services" class="bouncing-link transition duration-300 text-white hover:text-pink-400" data-hover="Services">Services</a>
+                <a href="#gallery" class="bouncing-link transition duration-300 text-white hover:text-pink-400" data-hover="Gallery">Gallery</a>
+                <a href="#about" class="bouncing-link transition duration-300 text-white hover:text-pink-400" data-hover="About">About</a>
+                <a href="#testimonials" class="bouncing-link transition duration-300 text-white hover:text-pink-400" data-hover="Testimonials">Testimonials</a>
+                <a href="#contact" class="bouncing-link transition duration-300 text-white hover:text-pink-400" data-hover="Contact">Contact</a>
+                <a href="booking.html" class="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-4 py-2 rounded-full italic-font hover:opacity-90 transition duration-300 glow shadow-lg">Book Now</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none z-50 relative">
+                <div class="hamburger w-6 h-6 flex flex-col justify-center items-center">
+                    <div class="top-line h-0.5 w-6 bg-white transition-all duration-300 absolute"></div>
+                    <div class="middle-line h-0.5 w-6 bg-white transition-all duration-300 absolute"></div>
+                    <div class="bottom-line h-0.5 w-6 bg-white transition-all duration-300 absolute"></div>
+                </div>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black/95 z-30 backdrop-blur-sm">
+            <div class="mobile-menu-content container mx-auto px-4 py-8">
+                <div class="flex flex-col space-y-4 text-center">
+                    <a href="#home" class="text-xl bouncing-link-mobile italic-font transition duration-300 py-3" data-hover="Home">Home</a>
+                    <a href="#services" class="text-xl bouncing-link-mobile italic-font transition duration-300 py-3" data-hover="Services">Services</a>
+                    <a href="#gallery" class="text-xl bouncing-link-mobile italic-font transition duration-300 py-3" data-hover="Gallery">Gallery</a>
+                    <a href="#about" class="text-xl bouncing-link-mobile italic-font transition duration-300 py-3" data-hover="About">About</a>
+                    <a href="#testimonials" class="text-xl bouncing-link-mobile italic-font transition duration-300 py-3" data-hover="Testimonials">Testimonials</a>
+                    <a href="#contact" class="text-xl bouncing-link-mobile italic-font transition duration-300 py-3" data-hover="Contact">Contact</a>
+                    <a href="booking.html" class="text-lg bg-gradient-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full italic-font mx-auto inline-block hover:opacity-90 transition duration-300 glow">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 md:pt-40 md:pb-24 relative">
+        <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx2fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80'); z-index: -1;"></div>
+        <div class="hero-gradient absolute inset-0 z-0"></div>
+        
+        <div class="container mx-auto px-4 z-10 relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 italic-font leading-tight">
+                        <span class="electric-blue glow-text">Drive Clean.</span> 
+                        <span class="hot-pink glow-text">Stay Sharp.</span>
+                        <span class="block text-white mt-2">Mickey's Mobile Detailing at Your Doorstep.</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        Professional mobile detailing that brings the shine to you. Serving your area 7 days a week with premium car care services.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="booking.html" class="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold italic-font hover:opacity-90 transition duration-300 glow">Book Now</a>
+                        <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-full font-bold italic-font hover:bg-white hover:text-black transition duration-300">View Services</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute  opacity-75 blur-lg filter"></div>
+                        <div class="relative bg-transparent rounded-2xl overflow-hidden ">
+                            <img src="Images/logo.png" style="background: transparent;"
+                                 alt="Luxury Car Detailing" 
+                                 class="w-full h-auto object-cover rounded-2xl transition duration-500 hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-black/70 relative">
+        <!-- Fireflies Animation -->
+        <div class="fireflies">
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+        </div>
+        <!-- Confetti Container -->
+    <div class="confetti-container" id="confetti-container"></div>
+    <div class="confetti-container" id="confetti-container"></div>
+    <div class="confetti-container" id="confetti-container"></div>
+    <div class="confetti-container" id="confetti-container"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold italic-font electric-blue mb-4">Our Premium Detailing Services</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                <!-- Basic Detail Card -->
+                <div class="service-card bg-gray-900 rounded-xl p-6 shadow-xl border border-gray-800 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-bold italic-font text-white">Basic Detail</h3>
+                        <span class="bg-blue-500 text-xs font-bold px-2 py-1 rounded italic-font">POPULAR</span>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-gray-800/40 p-3 rounded-lg">
+                                <p class="text-xs text-gray-400 italic-font">Sedans</p>
+                                <p class="text-xl font-bold text-white">$65</p>
+                            </div>
+                            <div class="bg-gray-800/40 p-3 rounded-lg">
+                                <p class="text-xs text-gray-400 italic-font">SUVs</p>
+                                <p class="text-xl font-bold text-white">$75</p>
+                            </div>
+                            <div class="bg-gray-800/40 p-3 rounded-lg">
+                                <p class="text-xs text-gray-400 italic-font">XL Trucks</p>
+                                <p class="text-xl font-bold text-white">$95</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 flex-grow">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2 italic-font">Includes:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Full exterior foam bath</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Wheels & tires deep cleaned</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Tire dressing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Windows cleaned</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Hand dry</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 rounded-lg font-bold italic-font hover:from-pink-700 hover:to-blue-700 transition duration-300 glow mt-auto">
+                        Book Basic Detail
+                    </button>
+                </div>
+                
+                <!-- Complete Detail Card -->
+                <div class="service-card bg-gray-900 rounded-xl p-6 shadow-xl border border-gray-800 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-bold italic-font text-white">Complete Detail</h3>
+                        <span class="bg-pink-500 text-xs font-bold px-2 py-1 rounded italic-font">PREMIUM</span>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-gray-800/40 p-3 rounded-lg">
+                                <p class="text-xs text-gray-400 italic-font">Sedans</p>
+                                <p class="text-xl font-bold text-white">$150</p>
+                            </div>
+                            <div class="bg-gray-800/40 p-3 rounded-lg">
+                                <p class="text-xs text-gray-400 italic-font">SUVs</p>
+                                <p class="text-xl font-bold text-white">$175</p>
+                            </div>
+                            <div class="bg-gray-800/40 p-3 rounded-lg">
+                                <p class="text-xs text-gray-400 italic-font">XL Trucks</p>
+                                <p class="text-xl font-bold text-white">$200</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 flex-grow">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2 italic-font">Everything in Basic, plus:</h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Wax application</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Complete vacuum & wipe-down of cracks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Floor mats cleaned</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-300">Air freshener</span>
+                            </li>
+                        </ul>
+                        
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2 italic-font">Extras (additional cost):</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="text-xs bg-gray-800/40 px-2 py-1 rounded text-center">Seat & carpet shampoo</span>
+                            <span class="text-xs bg-gray-800/40 px-2 py-1 rounded text-center">Pet hair removal</span>
+                            <span class="text-xs bg-gray-800/40 px-2 py-1 rounded text-center">Biohazard removal</span>
+                            <span class="text-xs bg-gray-800/40 px-2 py-1 rounded text-center">Headlight restoration</span>
+                            <span class="text-xs bg-gray-800/40 px-2 py-1 rounded text-center">Minor scratch removal</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 rounded-lg font-bold italic-font hover:from-pink-700 hover:to-blue-700 transition duration-300 glow mt-auto">
+                        Book Complete Detail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-black relative">
+        <!-- Fireflies Animation -->
+        <div class="fireflies">
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold italic-font hot-pink mb-4">Our Work Gallery</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Witness the transformation - from dull to dazzling with our premium detailing services.</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto mt-4"></div>
+            </div>
+            
+            <!-- Infinite Scroll Gallery -->
+            <div class="infinite-gallery mb-12">
+                <div class="gallery-track">
+                    <!-- First set of images -->
+                    <div class="infinite-gallery-item">
+                        <img src="https://modded.com/wp-content/uploads/sites/9/2023/09/talia-PKdQIG4goQc-unsplash-1.jpg" alt="Car detail wash">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Foam Bath Treatment</h3>
+                                <p class="text-gray-300 text-sm">Before & After</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://th.bing.com/th/id/OIP.ZQKkfcsFRFl7tMc38ZGBAwHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" alt="Interior detailing">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Interior Deep Clean</h3>
+                                <p class="text-gray-300 text-sm">Vacuum & Wipe-down</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://th.bing.com/th/id/OIP.pD6uRkqBYV5UaKJhjXuBrAHaE8?rs=1&pid=ImgDetMain" alt="Shiny wheels detail">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Wheel Restoration</h3>
+                                <p class="text-gray-300 text-sm">Before & After</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://st.hotrod.com/uploads/sites/5/2019/11/Tesla-Cybertruck-Electric-Pickup-Truck-Front-3-4-View-with-Off-Road-Lights-and-Headlights-Illuminated.jpg" alt="Truck detailing">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">XL Truck Detail</h3>
+                                <p class="text-gray-300 text-sm">Complete Service</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://cdn-fastly.autoguide.com/media/2023/06/09/12770290/best-american-cars-10-great-choices.jpg?size=720x845&nocrop=1" alt="Headlight restoration">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Headlight Restoration</h3>
+                                <p class="text-gray-300 text-sm">Extra Service</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2021/06/Dodge-Viper-ACR-(2016)-Via-Autoblog.jpg" alt="Shiny car">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Final Polish</h3>
+                                <p class="text-gray-300 text-sm">Showroom Shine</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="infinite-gallery-item">
+                        <img src="https://s3.amazonaws.com/images.wheels.ca/wp-content/uploads/2017/08/6403-066-1.jpg" alt="Car detail wash">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Foam Bath Treatment</h3>
+                                <p class="text-gray-300 text-sm">Before & After</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://th.bing.com/th?id=OIF.Lsc%2bIkfKw4hCf8qpGJ9FuA&rs=1&pid=ImgDetMain" alt="Interior detailing">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Interior Deep Clean</h3>
+                                <p class="text-gray-300 text-sm">Vacuum & Wipe-down</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="infinite-gallery-item">
+                        <img src="https://th.bing.com/th/id/OIP.koGwKo2oXGrJlq4_3LRYyQHaDt?rs=1&pid=ImgDetMain" alt="Shiny wheels detail">
+                        <div class="infinite-gallery-overlay">
+                            <div>
+                                <h3 class="text-white text-xl font-bold italic-font">Wheel Restoration</h3>
+                                <p class="text-gray-300 text-sm">Before & After</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-pink-600 to-blue-600 text-white px-8 py-3 rounded-full font-bold italic-font hover:opacity-90 transition duration-300 glow">
+                    View Full Gallery
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="mb-8">
+                        <h2 class="text-3xl md:text-4xl font-bold italic-font electric-blue mb-4">About Mickey's Mobile Auto Detailing</h2>
+                        <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500"></div>
+                    </div>
+                    
+                    <div class="space-y-6 text-gray-300">
+                        <p class="italic-font">
+                            Mickey's Mobile Auto Detailing is a trusted mobile detailing service, open 7 days a week. We specialize in premium car care with flexible hours and high-quality results.
+                        </p>
+                        
+                        <p>
+                            Founded with a passion for perfection, we bring the shine directly to your doorstep. Our team of detailing experts uses premium products and techniques to restore your vehicle's showroom finish.
+                        </p>
+                        
+                        <div class="bg-gray-800/40 p-6 rounded-xl border-l-4 border-pink-500">
+                            <p class="italic-font font-medium">
+                                "Our mission is simple: deliver exceptional detailing services with convenience you can't find anywhere else. Your car deserves the best, and that's exactly what we provide."
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="flex-1 bg-gray-800/40 p-4 rounded-lg about-card">
+                                <div class="text-pink-500 text-xl mb-2">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h4 class="font-bold italic-font text-white mb-1">7 Days a Week</h4>
+                                <p class="text-sm text-gray-400">We're available when you need us</p>
+                            </div>
+                            <div class="flex-1 bg-gray-800/40 p-4 rounded-lg about-card">
+                                <div class="text-blue-500 text-xl mb-2">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <h4 class="font-bold italic-font text-white mb-1">Mobile Service</h4>
+                                <p class="text-sm text-gray-400">We come to you - home, work, or anywhere</p>
+                            </div>
+                            <div class="flex-1 bg-gray-800/40 p-4 rounded-lg about-card">
+                                <div class="text-green-500 text-xl mb-2">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h4 class="font-bold italic-font text-white mb-1">Premium Products</h4>
+                                <p class="text-sm text-gray-400">Only the best detailing products used</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="absolute -inset-6 bg-gradient-to-tr from-pink-500 to-blue-500 rounded-xl opacity-30 blur-xl filter"></div>
+                        <div class="relative rounded-xl overflow-hidden shadow-xl h-[700px]">
+                            <img src="Images/about.png" 
+                                 alt="Mickey's Mobile Auto Detailing - About Us" 
+                                 class="w-full h-full object-cover rounded-xl transform transition duration-500 hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-black relative">
+        <!-- Fireflies Animation -->
+        <div class="fireflies">
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold italic-font hot-pink mb-4">What Our Clients Say</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-6 relative">
+                    <div class="absolute -top-5 -left-5 text-7xl opacity-20 hot-pink italic-font">"</div>
+                    <div class="mb-4 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-xl font-bold text-white mr-4">JS</div>
+                        <div>
+                            <h4 class="font-bold text-white italic-font">Jason S.</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic-font">
+                        "Mickey and his team did an amazing job on my truck! It looked brand new after their complete detail package. The convenience of them coming to my office was unbeatable."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-6 relative">
+                    <div class="absolute -top-5 -left-5 text-7xl opacity-20 hot-pink italic-font">"</div>
+                    <div class="mb-4 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-xl font-bold text-white mr-4">AM</div>
+                        <div>
+                            <h4 class="font-bold text-white italic-font">Amanda M.</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic-font">
+                        "After years of going to car washes, I decided to try Mickey's mobile service. Never going back! The attention to detail was incredible. My SUV has never looked this good."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-6 relative">
+                    <div class="absolute -top-5 -left-5 text-7xl opacity-20 hot-pink italic-font">"</div>
+                    <div class="mb-4 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-xl font-bold text-white mr-4">TL</div>
+                        <div>
+                            <h4 class="font-bold text-white italic-font">Trevor L.</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic-font">
+                        "The pet hair removal service saved my seats! With three dogs, my car was a mess. Mickey's team got every single hair out. Worth every penny and then some."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-bold italic-font hover:bg-white hover:text-black transition duration-300">
+                    Read More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="mb-8">
+                        <h2 class="text-3xl md:text-4xl font-bold italic-font electric-blue mb-4">Get In Touch</h2>
+                        <p class="text-gray-300">Ready to restore your vehicle's shine? Contact us today to schedule your detailing service.</p>
+                        <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mt-4"></div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gradient-to-br from-pink-600 to-blue-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold italic-font mb-1">Phone</h4>
+                                <a href="tel:1135556116" class="text-gray-300 hover:text-white transition duration-300">(113) 555-6116</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gradient-to-br from-pink-600 to-blue-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold italic-font mb-1">Email</h4>
+                                <a href="mailto:Mickeysautodetail4u@gmail.com" class="text-gray-300 hover:text-white transition duration-300">Mickeysautodetail4u@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gradient-to-br from-pink-600 to-blue-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold italic-font mb-1">Operating Hours</h4>
+                                <p class="text-gray-300">Mon–Fri: 7AM – 7PM</p>
+                                <p class="text-gray-300">Sat–Sun: 11AM – 5PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gradient-to-br from-pink-600 to-blue-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold italic-font mb-1">Service Area</h4>
+                                <p class="text-gray-300">We proudly serve the entire metropolitan area with our mobile detailing service.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <h4 class="text-white font-bold italic-font mb-2">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-800/40 h-10 w-10 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800/40 h-10 w-10 rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800/40 h-10 w-10 rounded-full flex items-center justify-center text-white hover:bg-blue-400 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-black/40 p-8 rounded-xl border border-gray-800">
+                    <h3 class="text-2xl font-bold italic-font text-white mb-6">Request A Booking</h3>
+                    <form id="booking-form" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Full Name*</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Email*</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Phone*</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="service-type" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Service Type*</label>
+                                <select id="service-type" name="service-type" required 
+                                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0">
+                                    <option value="">Select Service</option>
+                                    <option value="basic">Basic Detail</option>
+                                    <option value="complete">Complete Detail</option>
+                                    <option value="extras">Extra Services</option>
+                                    <option value="other">Other (Specify in Message)</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="vehicle-type" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Vehicle Type*</label>
+                                <select id="vehicle-type" name="vehicle-type" required 
+                                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0">
+                                    <option value="">Select Vehicle</option>
+                                    <option value="sedan">Sedan</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="truck">Truck/XL SUV</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Preferred Date*</label>
+                            <input type="date" id="date" name="date" required 
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1 italic-font">Special Requests</label>
+                            <textarea id="message" name="message" rows="4" 
+                                      class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white custom-input italic-font focus:border-pink-500 focus:ring-0"></textarea>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <button type="submit" 
+                                    class="w-full bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 px-6 rounded-lg font-bold italic-font hover:from-pink-700 hover:to-blue-700 transition duration-300 glow">
+                                Submit Booking Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-black relative">
+        <!-- Fireflies Animation -->
+        <div class="fireflies">
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+        </div>
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold italic-font hot-pink mb-4">Frequently Asked Questions</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="group bg-gray-900 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-800/50 transition duration-300">
+                        <span class="text-lg font-medium text-white italic-font">How long does the detailing process take?</span>
+                        <i class="fas fa-plus text-pink-500 transform transition-transform duration-300 group-[.active]:rotate-45"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-300">
+                            The duration depends on the package you choose and the condition of your vehicle. Basic details typically take 1-2 hours, while Complete details can take 3-5 hours. Additional services will add more time. We'll provide you with a time estimate when you book.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="group bg-gray-900 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-800/50 transition duration-300">
+                        <span class="text-lg font-medium text-white italic-font">Do I need to be present during the detailing?</span>
+                        <i class="fas fa-plus text-blue-500 transform transition-transform duration-300 group-[.active]:rotate-45"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-300">
+                            No, you don't need to be present. We just need access to your vehicle and a way to contact you when we're finished. Many of our customers leave their keys with a doorman or in a prearranged secure location.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="group bg-gray-900 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-800/50 transition duration-300">
+                        <span class="text-lg font-medium text-white italic-font">What payment methods do you accept?</span>
+                        <i class="fas fa-plus text-pink-500 transform transition-transform duration-300 group-[.active]:rotate-45"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-300">
+                            We accept all major credit cards, cash, and digital payments (Venmo, Cash App, Zelle). Payment is due upon completion of service unless other arrangements have been made in advance.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="group bg-gray-900 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-800/50 transition duration-300">
+                        <span class="text-lg font-medium text-white italic-font">What if it rains on my scheduled day?</span>
+                        <i class="fas fa-plus text-blue-500 transform transition-transform duration-300 group-[.active]:rotate-45"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-300">
+                            If rain is forecasted, we'll contact you in advance to reschedule. We want to ensure the best results for your vehicle, so we avoid detailing during wet weather unless we can work in a covered area you provide.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="group bg-gray-900 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-800/50 transition duration-300">
+                        <span class="text-lg font-medium text-white italic-font">How often should I get my car detailed?</span>
+                        <i class="fas fa-plus text-pink-500 transform transition-transform duration-300 group-[.active]:rotate-45"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-300">
+                            For optimal maintenance, we recommend a complete detail every 3-4 months and a basic detail monthly if your vehicle sees heavy use. Many of our customers opt for our maintenance plans that include regular services at discounted rates.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="group bg-gray-900 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-800/50 transition duration-300">
+                        <span class="text-lg font-medium text-white italic-font">Are the cleaning products you use safe for my car?</span>
+                        <i class="fas fa-plus text-blue-500 transform transition-transform duration-300 group-[.active]:rotate-45"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-300">
+                            Absolutely! We only use premium, pH-balanced automotive detailing products that are safe for all vehicle surfaces, including clear coats, leather, vinyl, and rubber. Many of our products are eco-friendly as well.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-bold italic-font hover:bg-white hover:text-black transition duration-300">
+                    More Questions? Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800 relative">
+        <!-- Fireflies Animation -->
+        <div class="fireflies">
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+            <div class="firefly pink"></div>
+            <div class="firefly blue"></div>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-xl italic-font font-bold hot-pink">Mickey's Mobile</span>
+                        <span class="text-lg italic-font electric-blue">Auto Detailing</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Premium mobile detailing services that come to you. Restoring your vehicle's showroom shine with convenience you can't find elsewhere.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 italic-font">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300 italic-font">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 italic-font">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition duration-300 italic-font">Gallery</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300 italic-font">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300 italic-font">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300 italic-font">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 italic-font">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 italic-font">Basic Detail</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 italic-font">Complete Detail</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 italic-font">Extra Services</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 italic-font">Maintenance Plans</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300 italic-font">Get a Quote</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 italic-font">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-pink-500 mr-2"></i>
+                            <a href="tel:1135556116" class="text-gray-400 hover:text-white transition duration-300">(113) 555-6116</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-blue-500 mr-2"></i>
+                            <a href="mailto:Mickeysautodetail4u@gmail.com" class="text-gray-400 hover:text-white transition duration-300">Mickeysautodetail4u@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-pink-500 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 7AM-7PM</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-blue-500 mr-2"></i>
+                            <span class="text-gray-400">Sat-Sun: 11AM-5PM</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <a href="booking.html" class="bg-gradient-to-r from-pink-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold italic-font inline-block hover:opacity-90 transition duration-300 glow">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500 italic-font">
+                    © 2025 Mickey's Mobile Auto Detailing. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-pink-600 to-blue-600 text-white p-3 rounded-full shadow-lg hover:opacity-90 transition duration-300 opacity-0 invisible transform translate-y-4 z-50 glow">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle with improved animations
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenuContent = document.querySelector('.mobile-menu-content');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Add animation class
+                setTimeout(() => {
+                    mobileMenuContent.classList.add('mobile-menu');
+                }, 10);
+            } else {
+                // Hide menu with animation
+                mobileMenuContent.classList.add('closing');
+                hamburger.classList.remove('active');
+                
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuContent.classList.remove('mobile-menu', 'closing');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuContent.classList.add('closing');
+                hamburger.classList.remove('active');
+                
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuContent.classList.remove('mobile-menu', 'closing');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenuContent.classList.add('closing');
+                hamburger.classList.remove('active');
+                
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuContent.classList.remove('mobile-menu', 'closing');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqGroup = question.closest('.group');
+                const answer = faqGroup.querySelector('.faq-answer');
+                const icon = faqGroup.querySelector('.fa-plus');
+                
+                // Toggle the active class on the group
+                faqGroup.classList.toggle('active');
+                
+                // Toggle the answer visibility
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                
+                // Toggle the icon rotation
+                if (faqGroup.classList.contains('active')) {
+                    answer.classList.remove('hidden');
+                } else {
+                    answer.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form Submission
+        const bookingForm = document.getElementById('booking-form');
+        
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const serviceType = document.getElementById('service-type').value;
+            const vehicleType = document.getElementById('vehicle-type').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to a server
+            console.log({
+                name,
+                email,
+                phone,
+                serviceType,
+                vehicleType,
+                date,
+                message
+            });
+            
+            // Show success message
+            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+            
+            // Reset form
+            bookingForm.reset();
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Top contact bar scroll behavior
+        window.addEventListener('scroll', function() {
+            const topBar = document.getElementById('top-contact-bar');
+            const navbar = document.getElementById('navbar');
+            const heroSection = document.getElementById('home');
+            const heroHeight = heroSection.offsetHeight;
+            const scrollPosition = window.scrollY;
+            const topBarHeight = topBar.offsetHeight; // Get actual height
+            
+            if (scrollPosition > heroHeight - 100) {
+                topBar.style.transform = 'translateY(-100%)';
+                navbar.style.top = '0px';
+            } else {
+                topBar.style.transform = 'translateY(0)';
+                navbar.style.top = topBarHeight + 'px'; // Use actual height
+            }
+        });
+        
+    </script>
+</body>
+</html>
